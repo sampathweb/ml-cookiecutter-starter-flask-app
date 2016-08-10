@@ -17,7 +17,7 @@ app.config.from_object("app.config")
 # unpickle my models
 MODELS = {
     "iris": {
-        "estimator" : joblib.load('models/iris_model.pkl'),
+        "estimator" : joblib.load('models/iris/model.pkl'),
         "target_names": ['setosa', 'versicolor', 'virginica']
     }
 }

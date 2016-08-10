@@ -21,4 +21,4 @@ if __name__ == "__main__":
     if not os.path.exists(_SERIALIZATION_DIR):
         os.makedirs(_SERIALIZATION_DIR)
 
-    joblib.dump(knn, os.path.join(_SERIALIZATION_DIR, 'iris_model.pkl'))
+    joblib.dump(knn, os.path.join(_SERIALIZATION_DIR, 'model.pkl'))
