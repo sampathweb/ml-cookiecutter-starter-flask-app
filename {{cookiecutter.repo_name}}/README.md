@@ -110,9 +110,9 @@ sudo supervisorctl restart all
 
 # Check status
 sudo supervisorctl status
+```
 
-# if the process failed or say anything other than Running (after it says starting), then check supervisor logs in `/var/log/supervisor/..`
-
+* If the process failed or say anything other than Running (after it says starting), then check supervisor logs in `/var/log/supervisor/..`
 
 
 ### Redirect Port
