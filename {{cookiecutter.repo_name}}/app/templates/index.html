@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <section class="header">
+    <h2 class="title">IRIS Flower Prediction!</h2>
+  </section>
+  <hr />
+
+  <div class="content">
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div class="row">
+        <div class="three columns">
+          {{ form.sepal_length.label }} {{ form.sepal_length() }}
+        </div>
+        <div class="three columns">
+          {{ form.sepal_width.label }} {{ form.sepal_width() }}
+        </div>
+        <div class="three columns">
+          {{ form.petal_length.label }} {{ form.petal_length() }}
+        </div>
+        <div class="three columns">
+          {{ form.petal_width.label }} {{ form.petal_width() }}
+        </div>
+      </div>
+      <div class="row">
+        <button type="submit" class="button-primary">Submit</button>
+      </div>
+    </form>
+    {% if prediction %}
+      <div class="row">
+        <div class="six columns">
+          <h2>It is a {{ prediction }}</h2>
+          <img src="{{url_for('static', filename='images/iris_' + prediction + '.jpg')}}"
+              height="300"
+          />
+        </div>
+        <div class="six columns">
+         <!--  Your Chart could be here based on data array -->
+         <div id="chart"></div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock body %}
+
+{% block js %}
+  <script type="text/javascript">
+  // your JS Code
+  // Your D3 code could be here
+  // Pass in your dat array from Python to JS.  Note the | safe escapes the strings properly
+
+    var data = {{data | safe}};
+    console.log(data);
+  </script>
+{% endblock js %}
