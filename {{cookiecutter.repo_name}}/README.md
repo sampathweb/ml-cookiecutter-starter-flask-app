@@ -77,7 +77,6 @@ sudo vi /etc/supervisor/conf.d/iris-app.conf
 
 # Go to insert mode by pressing `i` then Add the following config
 
-```
 [program:iris-app]
 autostart = true
 autorestart = true
@@ -127,7 +126,7 @@ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
 Open Browser and check if you can see your app from `http://<your aws ip>`.
 
 
-### Credits:
+## Credits:
 
 Template from https://github.com/sampathweb/ml-cookiecutter-starter-flask-app
 
